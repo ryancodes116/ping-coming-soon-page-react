@@ -3,7 +3,7 @@
 }
 
 .logo {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .title {
@@ -52,4 +52,27 @@
 
 .submit:hover {
   opacity: 0.9;
+}
+
+/* Media Queries */
+@media (min-width: 700px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .form {
+    flex-direction: row;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .email {
+    width: 60%;
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .submit {
+    width: 40%;
+  }
 }

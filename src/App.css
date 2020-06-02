@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding: 3rem 0;
+  padding: 5rem 0 2rem;
 }
 
 img {

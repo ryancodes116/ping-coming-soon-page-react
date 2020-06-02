@@ -1,3 +1,10 @@
 .dashboardWrapper {
   margin-top: 6rem;
 }
+
+/* Media Queries */
+@media (min-width: 700px) {
+  .dashboardContent {
+    max-width: 650px;
+  }
+}
