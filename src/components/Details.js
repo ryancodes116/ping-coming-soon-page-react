@@ -4,16 +4,51 @@ import styles from '../styles/Details.module.css';
 import logo from '../images/logo.svg';
 
 const Details = () => {
-  const [email, setEmail] = useState('');
+  const [formInfo, setFormInfo] = useState({
+    email: '',
+    emailError: '',
+    borderColor: 'hsl(223, 100%, 88%)',
+    errorDisplay: 'block',
+  });
 
   const handleChange = (e) => {
     const { value } = e.target;
-    setEmail(value);
+    setFormInfo((prevFormInfo) => {
+      return { ...prevFormInfo, email: value };
+    });
+  };
+
+  const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return re.test(email);
+  };
+
+  const clearForm = () => {
+    setFormInfo({
+      email: '',
+      emailError: '',
+      borderColor: 'hsl(223, 100%, 88%)',
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submitted');
+
+    const validEmail = validateEmail(formInfo.email);
+
+    if (!validEmail) {
+      setFormInfo((prevFormInfo) => {
+        return {
+          ...prevFormInfo,
+          emailError: 'Please provide a valid email address',
+          borderColor: 'hsl(354, 100%, 66%)',
+          errorDisplay: 'block',
+        };
+      });
+    } else {
+      clearForm();
+    }
   };
 
   return (
@@ -25,13 +60,23 @@ const Details = () => {
         </h2>
         <p className={styles.text}>Subscribe and get notified</p>
         <form className={styles.form} onSubmit={handleSubmit}>
-          <input
-            className={classNames(styles.input, styles.email)}
-            type="text"
-            placeholder="Your email address..."
-            value={email}
-            onChange={handleChange}
-          />
+          <div className={styles.emailWrapper}>
+            <input
+              className={classNames(styles.input, styles.email)}
+              style={{ borderColor: formInfo.borderColor }}
+              type="text"
+              placeholder="Your email address..."
+              value={formInfo.email}
+              onChange={handleChange}
+            />
+
+            <em
+              className={styles.errorMessage}
+              style={{ display: formInfo.errorDisplay }}
+            >
+              {formInfo.emailError}
+            </em>
+          </div>
 
           <input
             className={classNames(styles.input, styles.submit)}
