@@ -1,0 +1,9 @@
+.footerWrapper {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.copyright {
+  color: hsl(0, 0%, 59%);
+  font-size: 0.9rem;
+}

@@ -1,0 +1,55 @@
+.detailsContent {
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 3rem;
+}
+
+.title {
+  color: hsl(0, 0%, 59%);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.title span {
+  color: #000;
+  font-weight: 700;
+}
+
+.text {
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  font-size: 0.9rem;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+}
+
+.email {
+  margin-bottom: 0.8rem;
+  border: 2px solid hsl(223, 100%, 88%);
+  color: hsl(0, 0%, 59%);
+}
+
+.submit {
+  background-color: hsl(223, 87%, 63%);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.submit:hover {
+  opacity: 0.9;
+}

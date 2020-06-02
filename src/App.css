@@ -9,6 +9,11 @@
 body {
   font-family: 'Libre Franklin', sans-serif;
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem 0;
 }
 
 img {
@@ -17,4 +22,9 @@ img {
 
 p {
   line-height: 2;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
